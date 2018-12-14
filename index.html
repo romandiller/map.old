@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>test</title>
+	<style>
+		* {
+			padding: 0;
+			margin: 0;
+			outline: none;
+			list-style-type: none;
+			-webkit-box-sizing: border-box;
+			        box-sizing: border-box;
+		    font-family: sans-serif;
+		}
+		canvas {
+			display: block;
+		}
+	</style>
+</head>
+<body>
+	<canvas id="canvas"></canvas>
+	<script type="text/javascript">
+		
+		function B(){
+			this.b = "Hello";
+		}
+
+		function A(){
+			this.a = 123;
+			B.apply(this, arguments);
+		}
+
+		A.prototype = Object.create(B.prototype);
+
+		let a = new A();
+
+		console.log(a);
+
+	</script>
+</body>
+</html>
